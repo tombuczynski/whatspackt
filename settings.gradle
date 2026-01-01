@@ -21,3 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "WhatsPackt"
 include ':app'
+include ':common:data'
+include ':common:domain'
+include ':common:framework'
+include ':feature:chat'
+include ':feature:create_chat'
+include ':feature:conversations'
