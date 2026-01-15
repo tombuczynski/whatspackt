@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.packt.feature.create_chat.ui.CreateNewChat
+import com.packt.whatspackt.ui.navigation.MainNavigation
 import com.packt.whatspackt.ui.theme.WhatsPacktTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,12 +21,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WhatsPacktTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainNavigation(modifier = Modifier.fillMaxSize())
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    Greeting(
+//                        name = "Android",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+//                }
             }
         }
     }
@@ -40,8 +43,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    WhatsPacktTheme {
-        Greeting("Android")
-    }
+private fun PreviewCreateNewChat() {
+    CreateNewChat(onCreateNewChat = {})
 }
