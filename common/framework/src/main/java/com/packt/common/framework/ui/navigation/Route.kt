@@ -1,4 +1,4 @@
-package com.packt.whatspackt.ui.navigation
+package com.packt.common.framework.ui.navigation
 
 import androidx.annotation.Keep
 import kotlinx.serialization.Serializable
@@ -13,7 +13,7 @@ sealed class Route {
 
     @Keep
     @Serializable
-    object Conversations : Route()
+    object ConversationsList : Route()
 
     @Keep
     @Serializable
