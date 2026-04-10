@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            WhatsPacktTheme {
+            WhatsPacktTheme(dynamicColor = true) {
                 MainNavigation(modifier = Modifier.fillMaxSize())
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Greeting(
