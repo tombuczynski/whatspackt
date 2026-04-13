@@ -59,11 +59,12 @@ fun ConversationItem(conv: Conversation, modifier: Modifier = Modifier) {
                 text = conv.timestamp,
             )
 
+            Spacer(Modifier.height(4.dp))
+
             if (conv.unreadCount > 0) {
                 val shapeColor: Color = MaterialTheme.colorScheme.primary
                 val fontColor: Color = MaterialTheme.colorScheme.onPrimary
 
-                Spacer(Modifier.height(4.dp))
                 Text(
                     text = conv.unreadCount.toString(),
                     color = fontColor,
@@ -74,6 +75,12 @@ fun ConversationItem(conv: Conversation, modifier: Modifier = Modifier) {
                             drawCircle(shapeColor, radius = size.maxDimension * 0.52f)
                         }
                 )
+            } else {
+                Text(
+                    text = " ",
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.Bold,
+                )
             }
         }
     }
@@ -82,6 +89,13 @@ fun ConversationItem(conv: Conversation, modifier: Modifier = Modifier) {
 @Preview(showBackground = true, widthDp = 210)
 @Preview(showBackground = true)
 @Composable
-private fun ConversationItemPreview() {
+private fun ConversationItemPreview1() {
     ConversationItem(sampleConversationsList().first(), Modifier.fillMaxWidth())
+}
+
+@Preview(showBackground = true, widthDp = 210)
+@Preview(showBackground = true)
+@Composable
+private fun ConversationItemPreview2() {
+    ConversationItem(sampleConversationsList()[1], Modifier.fillMaxWidth())
 }

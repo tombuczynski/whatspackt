@@ -3,6 +3,7 @@ package com.packt.feature.conversations.ui
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.packt.common.framework.ui.navigation.GenerateTitles
 import com.packt.common.framework.ui.navigation.NavLabel
@@ -97,14 +99,17 @@ fun ConversationsListScreen(
             modifier = Modifier.padding(paddingValues),
         ) { pageIndex ->
             Column(
-                modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-                    .padding(8.dp),
+                modifier.fillMaxSize().padding(8.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = tabsConversationsList[pageIndex].title)
+                if (pageIndex == tabsConversationsList.indexOf(NavLabel.Chats)) {
+                    ConversationsList(
+                        Modifier.fillMaxSize(),
+                        onConversationClick = onConversationClick
+                    )
+                } else
+                    Text(text = tabsConversationsList[pageIndex].title)
             }
         }
     }
