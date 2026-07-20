@@ -1,0 +1,6 @@
+- [x] Update `ChatScreen.kt`
+    - [x] Add necessary imports (Scaffold, TopAppBar, Icons, etc.)
+    - [x] Implement `Scaffold` structure
+    - [x] Add `TopAppBar` with back button and title
+    - [x] Add `ChatList` to the content area
+- [x] Verify UI structure and code consistency
