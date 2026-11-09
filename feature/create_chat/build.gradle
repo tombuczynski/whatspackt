@@ -7,7 +7,7 @@ plugins {
 android {
     namespace 'com.packt.feature.create_chat'
     compileSdk {
-        version = release(36)
+        version = release(37)
     }
 
     defaultConfig {

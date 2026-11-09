@@ -8,7 +8,7 @@ plugins {
 android {
     namespace 'com.packt.feature.chat'
     compileSdk {
-        version = release(36)
+        version = release(37)
     }
 
     defaultConfig {
@@ -46,7 +46,8 @@ dependencies {
     implementation libs.androidx.compose.material3
     implementation libs.androidx.material.icons
     implementation libs.bundles.coil
-
+    implementation libs.bundles.ktor.client
+    implementation libs.hilt.android
 
     // Preview support
     implementation libs.androidx.compose.ui.tooling.preview
