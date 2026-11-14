@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.hilt.plugin)
 }
 
 android {
@@ -47,7 +48,8 @@ dependencies {
     implementation libs.androidx.material.icons
     implementation libs.bundles.coil
     implementation libs.bundles.ktor.client
-    implementation libs.hilt.android
+    implementation libs.bundles.hilt
+    ksp libs.hilt.compiler
 
     // Preview support
     implementation libs.androidx.compose.ui.tooling.preview
